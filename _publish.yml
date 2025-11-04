@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 19a70b11-3c6a-4468-866e-9a37710b71a6
+      url: https://seamusrobertmurphy.quarto.pub/ipcc-fire-emissions

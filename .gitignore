@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+/assets/inputs/
+.DS_Store
+
+*.dbf
+*.tif
+
+.dbf
+.tif

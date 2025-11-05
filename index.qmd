@@ -83,11 +83,9 @@ The methodology presented here addresses key challenges in fire emissions accoun
 
 ------------------------------------------------------------------------
 
-## 0.1 Introduction
+## IPCC Tier 1 Overview
 
-### 0.1.1 IPCC Tier 1 Overview
-
-The IPCC Tier 1 approach for estimating greenhouse gas emissions from fires provides a standardized, globally applicable framework based on readily available data and default emission factors. This methodology applies **Equation 2.27** from the 2006 IPCC Guidelines for National Greenhouse Gas Inventories (refined in 2019):
+The IPCC Tier 1 approach for estimating greenhouse gas emissions from fires provides a standardized, globally applicable framework based on readily available data and default emission factors. This methodology applies Equation 2.27 from the 2006 IPCC Guidelines for National Greenhouse Gas Inventories (refined in 2019):
 
 $$
 L_{fire} = A \times M_B \times C_f \times G_{ef} \times 10^{-3}
@@ -95,58 +93,70 @@ $$
 
 Where:
 
--   **L~fire~** = greenhouse gas emissions from fire (tonnes of CH₄, N₂O, or CO₂)
--   **A** = area burnt (ha)
--   **M~B~** = mass of fuel available for combustion (tonnes ha⁻¹)
--   **C~f~** = combustion factor (dimensionless, proportion of fuel consumed)
--   **G~ef~** = emission factor (g kg⁻¹ dry matter burnt)
+-   L~fire~ = greenhouse gas emissions from fire (tonnes of CH₄, N₂O, or CO₂)
+-   A = area burnt (ha)
+-   M~B~ = mass of fuel available for combustion (tonnes ha⁻¹)
+-   C~f~ = combustion factor (dimensionless, proportion of fuel consumed)
+-   G~ef~ = emission factor (g kg⁻¹ dry matter burnt)
 
 #### Key Principles
 
 The Tier 1 method prioritizes:
 
-1.  **Consistency**: Uniform application of default parameters enables cross-country comparability
-2.  **Transparency**: Clear documentation of data sources, assumptions, and limitations
-3.  **Completeness**: Coverage of all managed lands where fires occur
-4.  **Accuracy**: Use of satellite-based activity data with quality filtering (uncertainty \< 20%)
-5.  **Conservativeness**: Appropriate treatment of CO₂ emissions based on vegetation type and recovery dynamics
+1.  Consistency: Uniform application of default parameters enables cross-country comparability
+2.  Transparency: Clear documentation of data sources, assumptions, and limitations
+3.  Completeness: Coverage of all managed lands where fires occur
+4.  Accuracy: Use of satellite-based activity data with quality filtering (uncertainty \< 20%)
+5.  Conservativeness: Appropriate treatment of CO₂ emissions based on vegetation type and recovery dynamics
 
 #### Vegetation-Specific Applications
 
-**Forest Fires** (Humid Tropical Forest and Other Forest): - Only non-CO₂ emissions (CH₄, N₂O) are reported - CO₂ emissions excluded as they are captured in carbon stock change calculations - Applies to fires in Evergreen, Deciduous, and Mixed Forest land cover types
+Forest Fires (Humid Tropical Forest and Other Forest):
 
-**Savanna Fires** (Grassland and woody vegetation): - Non-CO₂ emissions only (CH₄, N₂O) - Assumes CO₂ balance through annual vegetation regrowth - Covers Grassland, Savanna, Woody Savanna, and Shrubland types
+-   Only non-CO₂ emissions (CH₄, N₂O) are reported
+-   CO₂ emissions excluded as they are captured in carbon stock change calculations
+-   Applies to fires in Evergreen, Deciduous, and Mixed Forest land cover types
 
-**Organic Soil Fires** (Peatland fires): - Reports both CO₂ and CH₄ emissions - Uses IPCC Wetlands Supplement (2014) parameters - Currently validated for Southeast Asia only
+Savanna Fires (Grassland and woody vegetation):
+
+-   Non-CO₂ emissions only (CH₄, N₂O)
+-   Assumes CO₂ balance through annual vegetation regrowth
+-   Covers Grassland, Savanna, Woody Savanna, and Shrubland types
+
+Organic Soil Fires (Peatland fires):
+
+-   Reports both CO₂ and CH₄ emissions
+-   Uses IPCC Wetlands Supplement parameters [@ipcc2013Supplement20062014]
+-   Currently validated for Southeast Asia only
 
 #### Managed Land Proxy Approach
 
-The methodology adopts the **Managed Land Proxy (MLP)** as the primary framework for attributing anthropogenic emissions. Under MLP:
+The methodology adopts the Managed Land Proxy (MLP) as the primary framework for attributing anthropogenic emissions. Under MLP:
 
 -   All emissions and removals on managed lands approximate anthropogenic effects
 -   Natural disturbances (e.g., wildfires) are included in total managed land fluxes
 -   Optional disaggregation separates anthropogenic activities from natural disturbance impacts
 -   Expectation that emissions from natural disturbances balance with subsequent removals over time
 
-The 2019 IPCC Refinement provides enhanced guidance for addressing **interannual variability (IAV)** caused by:
+The 2019 IPCC Refinement provides enhanced guidance for addressing interannual variability (IAV) caused by:
 
 1.  Natural disturbances (wildfires, insects, windthrow, ice storms)
-2.  Climate variability affecting photosynthesis and respiration\
+2.  Climate variability affecting photosynthesis and respiration
 3.  Variation in human activities (harvesting, land-use change)
 
 Countries experiencing high IAV from natural disturbances may optionally disaggregate these fluxes to better identify trends in anthropogenic emissions and evaluate mitigation actions.
 
 ------------------------------------------------------------------------
 
-### 0.1.2 FAOSTAT Fires Domain Context
+## FAOSTAT Fires Domain
 
 #### Database Overview
 
-The **FAOSTAT Emissions from Fires** domain provides geospatially-computed estimates of CH₄, N₂O, and CO₂ emissions from biomass burning across all countries and territories. The database:
+The FAOSTAT Emissions from Fires domain provides geospatially-computed estimates of CH₄, N₂O, and CO₂ emissions from biomass burning across all countries and territories. The database:
 
--   Covers the complete time series **1990–2024**
+-   Covers the complete time series 1990–2024
 -   Updates annually with new satellite observations
--   Disseminates both **activity data** (hectares burned, tonnes biomass burned) and **emission estimates** (kt CH₄, N₂O, CO₂)
+-   Disseminates both activity data (hectares burned, tonnes biomass burned) and emission estimates (kt CH₄, N₂O, CO₂)
 -   Provides regional aggregations for Annex I / non-Annex I country groups
 -   Integrates country-reported data from UNFCCC submissions for validation
 
@@ -154,250 +164,467 @@ The **FAOSTAT Emissions from Fires** domain provides geospatially-computed estim
 
 FAOSTAT implements IPCC Tier 1 methodology using:
 
--   **Pixel-level processing** in Google Earth Engine (GEE)
--   **Country-level aggregation** via FAO Global Administrative Unit Layers (GAUL 2015)
--   **Climate-dependent fuel consumption values** stratified by FAO-FRA Global Ecological Zones
--   **Quality-filtered satellite observations** (uncertainty \< 20%)
+-   Pixel-level processing in Google Earth Engine (GEE)
+-   Country-level aggregation via Global Administrative Unit Layers [@eurostatGeographicInformationSystem2025]
+-   Climate-dependent fuel consumption values stratified by FAO-FRA Global Ecological Zones
+-   Quality-filtered satellite observations (uncertainty \< 20%)
 
-The database serves as an **official IPCC-recommended tool** for National Greenhouse Gas Inventory (NGHGI) QA/QC processes and validation of activity data and emission estimates (IPCC 2019).
+The database serves as an official IPCC-recommended tool for National Greenhouse Gas Inventory (NGHGI) QA/QC processes and validation of activity data and emission estimates (IPCC 2019).
 
 #### Three Fire Categories
 
-**1. Forest Fires**\
-Emissions from fires in Forest Land, disaggregated into: - **Humid Tropical Forest**: Forest pixels overlaid with FAO-FRA tropical zones - **Other Forest**: All remaining forest types (boreal, temperate, extra-tropical)
+1\. Forest Fires\
+Emissions from fires in Forest Land, disaggregated into:
 
-Land cover identification aggregates MODIS IGBP classes: - Evergreen Needleleaf Forest - Evergreen Broadleaf Forest\
-- Deciduous Needleleaf Forest - Deciduous Broadleaf Forest - Mixed Forests
+-   Humid Tropical Forest: Forest pixels overlaid with FAO-FRA tropical zones
+-   Other Forest: All remaining forest types (boreal, temperate, extra-tropical)
 
-**2. Savanna Fires**\
-Emissions from Grassland and woody vegetation: - Grassland - Savanna - Woody Savanna - Open Shrubland - Closed Shrubland
+Land cover identification aggregates MODIS IGBP classes:
 
-**3. Fires in Organic Soils**\
-Emissions from peat fires identified by overlaying burned area with Histosols class from the Harmonized World Soil Database. Due to high uncertainty and limited validation outside Southeast Asia, emissions are **set to zero for all countries except those in Southeast Asia** (Indonesia, Malaysia, Brunei Darussalam). Complete global estimates are provided in supplementary files for reference and research purposes.
+-   Evergreen Needleleaf Forest
+-   Evergreen Broadleaf Forest
+-   Deciduous Needleleaf Forest
+-   Deciduous Broadleaf Forest
+-   Mixed Forests
+
+2\. Savanna Fires\
+Emissions from Grassland and woody vegetation:
+
+-   Grassland
+-   Savanna
+-   Woody Savanna
+-   Open Shrubland
+-   Closed Shrubland
+
+3\. Fires in Organic Soils\
+Emissions from peat fires identified by overlaying burned area with Histosols class from the Harmonized World Soil Database. Due to high uncertainty and limited validation outside Southeast Asia, emissions are set to zero for all countries except those in Southeast Asia (Indonesia, Malaysia, Brunei Darussalam). Complete global estimates are provided in supplementary files for reference and research purposes.
 
 #### UNFCCC Data Integration
 
-FAOSTAT also disseminates emissions and activity data reported by countries to UNFCCC: - **Activity data**: Sourced from National GHG Inventories or National Communications - **Emission data**: Sourced from UNFCCC data portal or Biennial Update Reports (BURs) - Formalized via **FAO-UNFCCC Memorandum of Understanding**
+FAOSTAT also disseminates emissions and activity data reported by countries to UNFCCC:
 
-This integration enables direct comparison between: - Top-down satellite-based FAOSTAT estimates - Bottom-up country-reported NGHGI data
+-   Activity data: Sourced from National GHG Inventories or National Communications
+-   Emission data: Sourced from UNFCCC data portal or Biennial Update Reports (BURs)
+-   Formalized via FAO-UNFCCC Memorandum of Understanding
+
+This integration enables direct comparison between:
+
+-   Top-down satellite-based FAOSTAT estimates
+-   Bottom-up country-reported NGHGI data
 
 ------------------------------------------------------------------------
 
-### 0.1.3 Time Series Data (1990–2024)
-
 #### Temporal Gap-Filling
 
-**Primary Satellite Era (2001–2024)**\
-Direct observations from MODIS MCD64A1 Collection 6.1 provide monthly burned area at 500m resolution.
+Primary Satellite Era (2001–2024): Direct observations from MODIS MCD64A1 Collection 6.1 provide monthly burned area at 500m resolution.
 
-**Historical Period (1990–2000)**\
-Values backfilled using two approaches: - **1996–2000**: Earlier FAOSTAT estimates (Rossi et al., 2016) - **1990–1995**: Averaged values from reconstructed time series (1996–2002 mean)
+Historical Period (1990–2000): Values backfilled using two approaches:
+
+-   1996–2000: Earlier FAOSTAT estimates [@rossi2016faostat]
+-   1990–1995: Averaged values from reconstructed time series (1996–2002 mean)
 
 This approach ensures complete temporal coverage required for UNFCCC reporting while acknowledging higher uncertainty in pre-MODIS years.
 
 #### Disseminated Data Products
 
-**Activity Data**: - Burned Area (hectares) by vegetation type and country - Burned Biomass (tonnes dry matter) by vegetation type and country
+Activity Data:
 
-**Emission Estimates**: - CH₄ emissions (kilotonnes) - N₂O emissions (kilotonnes)\
-- CO₂ emissions (kilotonnes, for organic soils only)
+-   Burned Area (hectares) by vegetation type and country
+-   Burned Biomass (tonnes dry matter) by vegetation type and country
 
-**Spatial Aggregations**: - 203 countries and territories (FAO Tier 1 coverage) - Standard FAOSTAT regional groupings - Annex I / non-Annex I country groups
+Emission Estimates:
 
-**Quality Indicators**: - Uncertainty metrics (\< 20% threshold applied) - Data completeness flags - Gap-filling methodology documentation
+-   CH₄ emissions (kilotonnes)
+-   N₂O emissions (kilotonnes)
+-   CO₂ emissions (kilotonnes, for organic soils only)
+
+Spatial Aggregations:
+
+-   203 countries and territories (FAO Tier 1 coverage)
+-   Standard FAOSTAT regional groupings (Annex I / non-Annex I country groups)
+
+Quality Indicators:
+
+-   Uncertainty metrics (\< 20% threshold applied)
+-   Data completeness flags
+-   Gap-filling methodology documentation
 
 #### Interoperability and Access
 
-**Data Formats**: - CSV files for bulk download - Web API for programmatic access - Interactive visualization platform - Google Earth Engine assets for geospatial analysis
+Data Formats:
 
-**Citation and Licensing**: - FAO Open Data Licensing Policy - Standard citation: *FAO, 2024. FAOSTAT Climate Change: Agrifood systems emissions, Emissions from Fires, Rome, Italy.*
+-   CSV files for bulk download
+-   Web API for programmatic access
+-   Interactive visualization platform
+-   Google Earth Engine assets for geospatial analysis
+
+Citation and Licensing:
+
+-   FAO Open Data Licensing Policy
+-   Standard citation: *FAO, 2024. FAOSTAT Climate Change: Agrifood systems emissions, Emissions from Fires, Rome, Italy.*
 
 ------------------------------------------------------------------------
 
-### 0.1.4 QA/QC and Validation
+## QA/QC and Validation
 
 #### National GHG Inventories
 
-**Primary Use**: The IPCC explicitly recommends FAOSTAT as a tool for **NGHGI QA/QC processes** (IPCC 2019). Countries can:
+Primary Use: The IPCC explicitly recommends FAOSTAT as a tool for NGHGI QA/QC processes (IPCC 2019). Countries can:
 
-1.  **Cross-validate activity data**: Compare satellite-derived burned areas against national fire databases
-2.  **Evaluate emission factors**: Test sensitivity to country-specific vs. default IPCC parameters\
-3.  **Identify data gaps**: Detect missing or inconsistent reporting in national systems
-4.  **Assess trends**: Evaluate whether reported trends align with satellite observations
+1.  Cross-validate activity data: Compare satellite-derived burned areas against national fire databases
+2.  Evaluate emission factors: Test sensitivity to country-specific vs. default IPCC parameters\
+3.  Identify data gaps: Detect missing or inconsistent reporting in national systems
+4.  Assess trends: Evaluate whether reported trends align with satellite observations
 
 #### Comparison Frameworks
 
-**Top-Down vs. Bottom-Up Reconciliation**:
+Top-Down vs. Bottom-Up Reconciliation:
 
-FAOSTAT (satellite-based, top-down) ↔ NGHGI (ground-based, bottom-up)
+FAOSTAT (satellite-based, top-down) \<\> NGHGI (ground-based, bottom-up)
 
-Systematic differences may indicate: - Detection limitations in satellite products (e.g., small fires, smoldering) - Incomplete ground reporting - Different definitions of "managed land" - Biomass consumption parameter uncertainties
+Systematic differences may indicate:
 
-**Multi-Source Validation**: - Fire Detection: MODIS active fire products (MCD14ML, MYD14) vs. burned area (MCD64A1) - Land Cover: MODIS MCD12Q1 vs. national forest inventories - Emission Factors: IPCC defaults vs. regional measurements from literature
+-   Detection limitations in satellite products (e.g., small fires, smoldering)
+-   Incomplete ground reporting
+-   Different definitions of "managed land"
+-   Biomass consumption parameter uncertainties
+
+Multi-Source Fire Validation:
+
+-   Fire Detection: MODIS active fire products (MCD14ML, MYD14) vs. burned area (MCD64A1)
+-   Land Cover: MODIS MCD12Q1 vs. national forest inventories
+-   Emission Factors: IPCC defaults ~~vs. regional measurements from literature~~[^index-1]
 
 #### Tier Advancement Pathways
 
-Countries may use FAOSTAT as a **stepping stone** to higher-tier methods:
+Countries may use FAOSTAT as a stepping stone to higher-tier methods:
 
-**Tier 1 → Tier 2**: - Replace default emission factors with country-specific values - Refine fuel consumption parameters using field measurements - Improve combustion factor estimates via burn severity mapping
+Tier 1 =\> Tier 2:
 
-**Tier 2 → Tier 3**: - Integrate process-based models (e.g., FOFEM, CONSUME) - Develop national fire monitoring systems - Implement measurement-based carbon stock change assessments
+-   Replace default emission factors with country-specific values
+-   Refine fuel consumption parameters using field measurements
+-   Improve combustion factor estimates via burn severity mapping
+
+Tier 2 =\> Tier 3:
+
+-   Integrate process-based models (e.g., FOFEM, CONSUME)
+-   Develop national fire monitoring systems
+-   Implement measurement-based carbon stock change assessments
 
 #### Mitigation Action Tracking
 
-FAOSTAT time series enable evaluation of: - Prescribed burning programs - Fire suppression effectiveness\
-- Land management policy impacts - Climate change effects on fire regimes
+FAOSTAT time series enable evaluation of:
 
-Countries can quantify whether trends in anthropogenic fire emissions diverge from natural disturbance variability, supporting **Nationally Determined Contribution (NDC)** reporting and verification.
+-   Prescribed burning programs
+-   Fire suppression effectiveness
+-   Land management policy impacts
+-   Climate change effects on fire regimes
+
+Countries can quantify whether trends in anthropogenic fire emissions diverge from natural disturbance variability, supporting Nationally Determined Contribution (NDC) reporting and verification.
 
 ------------------------------------------------------------------------
 
-### 0.1.5 Uncertainty Considerations
+## Uncertainty Considerations
 
 #### Sources of Uncertainty
 
-**1. Activity Data Uncertainty (Burned Area)**
+### 1. Activity Data Uncertainty
 
-Satellite detection limitations: - **Small fires** (\< 500m): May be missed by MODIS 500m pixels - **Canopy-obscured fires**: Difficult to detect in dense forests - **Smoldering fires**: Peat fires may not produce strong thermal signatures - **Cloud contamination**: Persistent cloud cover reduces observation frequency - **Rapid vegetation regrowth**: Short time lag between fire and regrowth obscures burn scars
+Satellite detection limitations:
 
-MCD64A1 applies quality filters: - Only pixels with **uncertainty \< 20%** are included - Commission/omission errors vary by biome - Global burned area may be underestimated by 20-30% (Giglio et al., 2010)
+-   Small fires (\< 500m): May be missed by MODIS 500m pixels
+-   Canopy-obscured fires: Difficult to detect in dense forests
+-   Smoldering fires: Peat fires may not produce strong thermal signatures
+-   Cloud contamination: Persistent cloud cover reduces observation frequency
+-   Rapid vegetation regrowth: Short time lag between fire and regrowth obscures burn scars
 
-**2. Land Cover Classification Uncertainty**
+MCD64A1 applies quality filters:
 
-MODIS MCD12Q1 accuracy: - Overall accuracy: \~75% globally - Confusion between woody savannas and forests - Temporal lag in land-use change detection - Mixed pixels in heterogeneous landscapes
+-   Only pixels with uncertainty \< 20% are included
+-   Commission/omission errors vary by biome
+-   Global burned area may be underestimated by 20-30% [@giglio2010assessing]
 
-Impact on emissions: - Misclassification affects fuel consumption values (Table 2.4 ranges: 2.6 to 163.6 t ha⁻¹) - Forest vs. Grassland assignment determines whether CO₂ is reported
+### 2. Land Classification Uncertainty
 
-**3. Fuel Biomass Consumption Uncertainty**
+MODIS MCD12Q1 accuracy:
 
-IPCC default values (Table 2.4) reflect: - **High natural variability**: Standard errors often 30-50% of mean - **Limited empirical data**: Some vegetation types have sparse measurements - **Climate dependency**: Values vary by FAO-FRA Ecological Zones, but within-zone heterogeneity remains
+-   Overall accuracy: \~75% globally
+-   Confusion between woody savannas and forests
+-   Temporal lag in land-use change detection
+-   Mixed pixels in heterogeneous landscapes
 
-Example uncertainties (Mean ± SE): - Primary Tropical Forest: 119.6 ± (range: 83.9 to 163.6) t ha⁻¹ - Savanna Woodland: 2.6 ± 0.1 (early dry season) to 4.6 ± 1.5 (late dry season) t ha⁻¹
+Impact on emissions: Misclassification affects fuel consumption values (Table 2.4 ranges: 2.6 to 163.6 t ha⁻¹). For instances, Forest vs. Grassland assignment determines whether CO₂ is reported
 
-**4. Combustion Factor Uncertainty**
+### 3. Fuel Consumption Uncertainty
 
-Proportion of fuel consumed (Table 2.6): - Influenced by fire intensity, fuel moisture, weather conditions - Variability within vegetation types: SD often 0.1-0.2 (for factors ranging 0.2-0.9) - Incomplete combustion of coarse woody debris vs. near-complete combustion of grasses
+IPCC default values (Table 2.4) reflect:
 
-**5. Emission Factor Uncertainty**
+-   High natural variability: Standard errors often 30-50% of mean
+-   Limited empirical data: Some vegetation types have sparse measurements
+-   Climate dependency: Values vary by FAO-FRA Ecological Zones, but within-zone heterogeneity remains
 
-IPCC defaults (Table 2.5) based on Andreae & Merlet (2001): - Values represent global averages across fire types - Standard deviations: 20-60% of mean values - Influenced by combustion efficiency (flaming vs. smoldering)
+Example uncertainties (Mean ± SE):
+
+-   Primary Tropical Forest: 119.6 ± (range: 83.9 to 163.6) t ha⁻¹
+-   Savanna Woodland: 2.6 ± 0.1 (early dry season) to 4.6 ± 1.5 (late dry season) t ha⁻¹
+
+### 4. Combustion Factor Uncertainty
+
+Proportion of fuel consumed (Table 2.6):
+
+-   Influenced by fire intensity, fuel moisture, weather conditions
+-   Variability within vegetation types: SD often 0.1-0.2 (for factors ranging 0.2-0.9)
+-   Incomplete combustion of coarse woody debris vs. near-complete combustion of grasses
+
+### 5. Emission Factor Uncertainty
+
+IPCC defaults (Table 2.5) based on [@andreae2001emission]:
+
+-   Values represent global averages across fire types
+-   Standard deviations: 20-60% of mean values
+-   Influenced by combustion efficiency (flaming vs. smoldering)
 
 Example (Savanna fires): - CO₂: 1613 ± 95 g kg⁻¹ - CH₄: 2.3 ± 0.9 g kg⁻¹ - N₂O: 0.21 ± 0.10 g kg⁻¹
 
-#### Aggregated Uncertainty Estimates
+#### Uncertainty Aggregation
 
-For **IPCC Tier 1**, cumulative uncertainty typically: - Activity data: ±30% for burned area - Emission estimates: ±50% for CH₄ and N₂O, ±30-40% for CO₂
+For IPCC Tier 1, cumulative uncertainty typically:
 
-**Organic soil fires** have particularly high uncertainty: - Remote sensing detection challenges - Limited field validation outside Southeast Asia - Difficulty distinguishing surface fires from subsurface peat combustion - Unknown proportion of fires on drained vs. undrained peatlands
+-   Activity data: ±30% for burned area
+-   Emission estimates: ±50% for CH₄ and N₂O, ±30-40% for CO₂
 
-#### Uncertainty Reduction Strategies
+Organic soil fires have particularly high uncertainty:
 
-**Country-Specific Improvements**: 1. Integrate national fire databases with satellite observations 2. Conduct field campaigns to measure fuel loads and combustion factors 3. Develop regional emission factors from smoke sampling 4. Implement Tier 2/3 methods in high-emission areas
+-   Remote sensing detection challenges
+-   Limited field validation outside Southeast Asia
+-   Difficulty distinguishing surface fires from subsurface peat combustion
+-   Unknown proportion of fires on drained vs. undrained peatlands
 
-**Methodological Enhancements**: 1. Multi-sensor fusion (MODIS + VIIRS + Sentinel) 2. Sub-pixel burned area algorithms 3. Burn severity mapping for combustion factors 4. Seasonal stratification of fuel moisture
+#### Uncertainty Reduction
 
-**Transparent Reporting**: 1. Document all assumptions and parameter choices 2. Report uncertainty ranges alongside emission estimates\
-3. Conduct sensitivity analyses for key parameters 4. Compare with independent data sources where available
+Country-Specific Improvements:
 
-#### Treatment of Interannual Variability
+1.  Integrate national fire databases with satellite observations
+2.  Conduct field campaigns to measure fuel loads and combustion factors
+3.  Develop regional emission factors from smoke sampling
+4.  Implement Tier 2/3 methods in high-emission areas
 
-High IAV from natural disturbances complicates trend analysis: - Wildfires can cause 2-3 orders of magnitude annual variation - Obscures anthropogenic emission trends - Challenges mitigation policy evaluation
+Methodological Enhancements:
 
-**Optional Disaggregation Approach** (IPCC 2019 Refinement, Section 2.6):
+1.  Multi-sensor fusion (MODIS + VIIRS + Sentinel)
+2.  Sub-pixel burned area algorithms
+3.  Burn severity mapping for combustion factors
+4.  Seasonal stratification of fuel moisture
 
-Countries may separate: - **Natural disturbance component**: Emissions/removals beyond normal variability (e.g., \> 95th percentile) - **Anthropogenic component**: Remaining managed land fluxes
+Transparent Reporting:
 
-This disaggregation: - Improves clarity of human activity impacts - Maintains MLP total for official reporting - Requires documentation of methods and thresholds - Assumes eventual balance between disturbance emissions and regrowth
+1.  Document all assumptions and parameter choices
+2.  Report uncertainty ranges alongside emission estimates
+3.  Conduct sensitivity analyses for key parameters
+4.  Compare with independent data sources where available
+
+#### Treatment of Inter-Annual Variability
+
+High IAV from natural disturbances complicates trend analysis:
+
+-   Wildfires can cause 2-3 orders of magnitude annual variation
+-   Obscures anthropogenic emission trends
+-   Challenges mitigation policy evaluation
+
+Optional Disaggregation Approach [@ipccChapter2Generic2019][^index-2]:
+
+Countries may separate:
+
+-   Natural disturbance component: Emissions/removals beyond normal variability (e.g., \> 95th percentile)
+-   Anthropogenic component: Remaining managed land fluxes
+
+This disaggregation:
+
+-   Improves clarity of human activity impacts
+-   Maintains MLP total for official reporting
+-   Requires documentation of methods and thresholds
+-   Assumes eventual balance between disturbance emissions and regrowth
 
 ------------------------------------------------------------------------
 
-## 0.2 Data Sources and Prerequisites
+## Data Sources
 
 #### MCD64A1.061: Burn Areas
 
-**Product Overview**:\
-The MCD64A1 Version 6.1 Burned Area product provides monthly, global gridded burned area at 500m spatial resolution, derived from combined Terra and Aqua MODIS observations.
+Product Overview: The MCD64A1 Version 6.1 Burned Area product provides monthly, global gridded burned area at 500m spatial resolution, derived from combined Terra and Aqua MODIS observations.
 
-**Key Features**: - **Temporal Resolution**: Monthly composites, 2001–present - **Spatial Resolution**: 500m nominal pixel size - **Algorithm**: Decision tree classifier using surface reflectance time series - **Output**: Burn date encoded as ordinal day of year, with quality indicators
+Key Features:
 
-**Data Layers**: - Burn Date (day of year when burn detected) - Burn Data Uncertainty (percentage uncertainty, 0-100%) - Quality Assurance flags
+-   Temporal Resolution: Monthly composites, 2001–present
+-   Spatial Resolution: 500m nominal pixel size
+-   Algorithm: Decision tree classifier using surface reflectance time series
+-   Output: Burn date encoded as ordinal day of year, with quality indicators
 
-**FAOSTAT Implementation**: - Quality filter applied: Only pixels with **uncertainty \< 20%** are retained - Aggregation: Pixel-level burn dates accumulated to annual country totals - GEE Asset: `MODIS/061/MCD64A1`
+Data Layers:
 
-**Access**: - NASA LP DAAC: https://lpdaac.usgs.gov/products/mcd64a1v061/ - Google Earth Engine: `ee.ImageCollection("MODIS/061/MCD64A1")` - User Guide: Giglio et al. (2022)
+-   Burn Date (day of year when burn detected)
+-   Burn Data Uncertainty (percentage uncertainty, 0-100%)
+-   Quality Assurance flags
 
-**Limitations**: - May miss small fires (\< 500m²) - Reduced accuracy in densely forested areas - Cloud obscuration limits temporal coverage in some regions - Detection lag in slow-spreading fires
+FAOSTAT Implementation:
+
+-   Quality filter applied: Only pixels with uncertainty \< 20% are retained
+-   Aggregation: Pixel-level burn dates accumulated to annual country totals
+-   GEE Asset: `MODIS/061/MCD64A1`
+
+Access:
+
+-   NASA LP DAAC: https://lpdaac.usgs.gov/products/mcd64a1v061/
+-   Google Earth Engine: `ee.ImageCollection("MODIS/061/MCD64A1")`
+-   User Guide: [@giglio2024collection]
+
+Limitations:
+
+-   May miss small fires (\< 500m²)
+-   Reduced accuracy in densely forested areas
+-   Cloud obscuration limits temporal coverage in some regions
+-   Detection lag in slow-spreading fires
 
 ------------------------------------------------------------------------
 
 #### MCD12Q1.061: IGBP Land Cover
 
-**Product Overview**:\
-MCD12Q1 provides annual global land cover classification at 500m resolution using supervised classification of MODIS reflectance data.
+Product Overview: MCD12Q1 provides annual global land cover classification at 500m resolution using supervised classification of MODIS reflectance data.
 
-**Classification Scheme**:\
-FAOSTAT uses **Land Cover Type 1** (IGBP 17-class legend):
+Classification Scheme: FAOSTAT uses Land Cover Type 1 (IGBP 17-class legend):
 
-**Forest Types** (used for Forest Fire category): - Class 1: Evergreen Needleleaf Forests - Class 2: Evergreen Broadleaf Forests - Class 3: Deciduous Needleleaf Forests - Class 4: Deciduous Broadleaf Forests - Class 5: Mixed Forests
+Forest Types (used for Forest Fire category):
 
-**Grassland/Savanna Types** (used for Savanna Fire category): - Class 6: Closed Shrublands - Class 7: Open Shrublands - Class 8: Woody Savannas - Class 9: Savannas - Class 10: Grasslands
+-   Class 1: Evergreen Needleleaf Forests
+-   Class 2: Evergreen Broadleaf Forests
+-   Class 3: Deciduous Needleleaf Forests
+-   Class 4: Deciduous Broadleaf Forests
+-   Class 5: Mixed Forests
 
-**Other Classes**: - Croplands, Urban, Wetlands, etc. (Classes 11-17)
+Grassland/Savanna Types (used for Savanna Fire category):
 
-**FAOSTAT Implementation**: - Annual land cover maps matched to fire detection year - Overlay burned pixels with contemporaneous land cover - Exclude built-up, barren, and water bodies - GEE Asset: `MODIS/061/MCD12Q1`
+-   Class 6: Closed Shrublands
+-   Class 7: Open Shrublands - Class 8: Woody Savannas
+-   Class 9: Savannas
+-   Class 10: Grasslands
+-   Other Classes: Croplands, Urban, Wetlands, etc. (Classes 11-17)
 
-**Access**: - NASA LP DAAC: https://lpdaac.usgs.gov/products/mcd12q1v061/ - Google Earth Engine: `ee.ImageCollection("MODIS/061/MCD12Q1")` - User Guide: Sulla-Menashe & Friedl (2022)
+FAOSTAT Implementation:
 
-**Accuracy**: - Overall accuracy: \~75% globally - Higher accuracy in homogeneous landscapes - Confusion common between woody savannas and open forests
+-   Annual land cover maps matched to fire detection year
+-   Overlay burned pixels with contemporaneous land cover
+-   Exclude built-up, barren, and water bodies
+-   GEE Asset: `MODIS/061/MCD12Q1`
+
+Access:
+
+-   NASA LP DAAC: https://lpdaac.usgs.gov/products/mcd12q1v061/
+-   Google Earth Engine: `ee.ImageCollection("MODIS/061/MCD12Q1")`
+-   User Guide: [@sulla2018user]
+
+Accuracy:
+
+-   Overall accuracy: \~75% globally
+-   Higher accuracy in homogeneous landscapes
+-   sConfusion common between woody savannas and open forests
 
 ------------------------------------------------------------------------
 
-#### FAO Global Admin. Unit Layers (GAUL)
+#### FAO Global Administrative Unit Layers (GAUL)
 
-**Dataset Overview**:\
+Dataset Overview:\
 GAUL provides standardized national and sub-national administrative boundaries for all countries and territories.
 
-**Coverage**: - 203 countries and 2 territories (FAO Tier 1 coverage) - Multi-level hierarchy (admin level 0, 1, 2) - Harmonized with FAOSTAT country classifications
+Coverage:
 
-**FAOSTAT Implementation**: - **Admin Level 0** used for country-level aggregation - All pixel-level fire data summed within national boundaries - Ensures consistency with other FAOSTAT domains
+-   203 countries and 2 territories (FAO Tier 1 coverage)
+-   Multi-level hierarchy (admin level 0, 1, 2)
+-   Harmonized with FAOSTAT country classifications
 
-**Version**: - GAUL 2015 (last available comprehensive update) - Note: Some recent boundary changes not reflected
+FAOSTAT Implementation:
 
-**Access**: - FAO GeoNetwork: http://www.fao.org/geonetwork/ - Google Earth Engine: `FAO/GAUL/2015/level0`
+-   Admin Level 0 used for country-level aggregation
+-   All pixel-level fire data summed within national boundaries
 
-**Considerations**: - Disputed boundaries handled per UN conventions - Some coastal zone definitions may differ from national claims - Small island territories aggregated into parent countries in some cases
+Ensures consistency with other FAOSTAT domains
+
+Version:
+
+-   GAUL 2015 (last available comprehensive update)
+-   Note: Some recent boundary changes not reflected
+
+Access:
+
+-   FAO GeoNetwork: http://www.fao.org/geonetwork/
+-   Google Earth Engine: `FAO/GAUL/2015/level0`
+
+Considerations:
+
+-   Disputed boundaries handled per UN conventions
+-   Some coastal zone definitions may differ from national claims
+-   Small island territories aggregated into parent countries in some cases
 
 ------------------------------------------------------------------------
 
 #### FAO Global Ecological Zones
 
-**Dataset Overview**:\
+Dataset Overview:\
 The Global Ecological Zones (GEZ) classification provides a climate-vegetation framework for stratifying fuel consumption parameters.
 
-**Classification System**:\
-Combines: - Climate domains (Polar, Boreal, Temperate, Subtropical, Tropical) - Ecological zones (e.g., Tropical moist forest, Tropical dry forest, Subtropical steppe)
+Classification System Combines:
 
-**FAOSTAT Implementation**: - Overlay burned forest pixels with GEZ to distinguish: - **Humid Tropical Forest**: Tropical moist ecological zones - **Other Forest**: All remaining forest types - Assign climate-dependent fuel consumption values from IPCC Table 2.4
+-   Climate domains (Polar, Boreal, Temperate, Subtropical, Tropical)
+-   Ecological zones (e.g., Tropical moist forest, Tropical dry forest, Subtropical steppe)
 
-**Access**: - FAO Forestry: http://www.fao.org/forest-resources-assessment/ - Document: FAO (2012) Global Ecological Zones for FAO forest reporting: 2010 Update
+FAOSTAT Implementation:
 
-**Application**: - Determines fuel biomass consumption parameters - Stratifies emission factors where climate-sensitive - Links to FAO Forest Resources Assessment (FRA) reporting categories
+-   Overlay burned forest pixels with GEZ to distinguish:
+-   Humid Tropical Forest: Tropical moist ecological zones
+-   Other Forest: All remaining forest types
+-   Assign climate-dependent fuel consumption values from IPCC Table 2.4
+
+Access:
+
+-   FAO Forestry: http://www.fao.org/forest-resources-assessment/
+-   Document: FAO Global Ecological Zones for FAO forest reporting 2010 Update [@fao2012global]
+
+Application:
+
+-   Determines fuel biomass consumption parameters
+-   Stratifies emission factors where climate-sensitive
+-   Links to FAO Forest Resources Assessment (FRA) reporting categories
 
 ------------------------------------------------------------------------
 
 #### IPCC Soil Zones Layer
 
-**Dataset Overview**:\
+Dataset Overview:\
 The Harmonized World Soil Database (HWSD v1.2) provides global soil type classifications at 30 arc-second (\~1 km) resolution.
 
-**Histosols Class**:\
-Organic soils characterized by: - High organic matter content (\> 20-30% by weight) - Formed in waterlogged conditions - Includes peatlands, bogs, fens
+Histosols Class:\
+Organic soils characterized by:
 
-**FAOSTAT Implementation**: - Burned area pixels overlaid with Histosols spatial layer - Fires in organic soils identified **independently of land cover** (except excluding built-up, barren, water) - Different fuel consumption and emission factors applied (IPCC Wetlands Supplement 2014)
+-   High organic matter content (\> 20-30% by weight)
+-   Formed in waterlogged conditions
+-   Includes peatlands, bogs, fens
 
-**Access**: - FAO Soils Portal: http://www.fao.org/soils-portal/ - IIASA: https://iiasa.ac.at/models-and-data/hwsd
+FAOSTAT Implementation:
 
-**Critical Limitation**: - FAOSTAT organic soil fire emissions **set to zero outside Southeast Asia** due to: - High uncertainty in peat fire detection - Limited validation data - Difficulty distinguishing drained vs. undrained peatlands - Uncertainty in human influence on fire occurrence
+-   Burned area pixels overlaid with Histosols spatial layer
+-   Fires in organic soils identified independently of land cover (except excluding built-up, barren, water)
+-   Different fuel consumption and emission factors applied (IPCC Wetlands Supplement 2014)
+
+Access:
+
+-   FAO Soils Portal: http://www.fao.org/soils-portal/
+-   IIASA: https://iiasa.ac.at/models-and-data/hwsd
+
+Critical Limitation:
+
+-   FAOSTAT organic soil fire emissions set to zero outside Southeast Asia due to:
+-   High uncertainty in peat fire detection
+-   Limited validation data - Difficulty distinguishing drained vs. undrained peatlands
+-   Uncertainty in human influence on fire occurrence
 
 Supplementary file `AllFires_OrganicSoils.csv` contains global estimates for research purposes.
 
@@ -405,58 +632,78 @@ Supplementary file `AllFires_OrganicSoils.csv` contains global estimates for res
 
 #### IPCC Climate Zones Layer
 
-**Dataset Overview**:\
+Dataset Overview:\
 IPCC Climate Zones classify global climate into categories used for stratifying biomass growth rates, decomposition rates, and fire parameters.
 
-**Classification**: - Polar - Boreal (Cold) - Temperate (Warm temperate, Cool temperate) - Tropical (Tropical wet, Tropical moist, Tropical dry, Tropical montane)
+Classification:
 
-**Source**: - Joint Research Centre (JRC) Climate Zones layer - Based on IPCC climatic zone definitions (IPCC 2006)
+-   Polar
+-   Boreal (Cold)
+-   Temperate (Warm temperate, Cool temperate)
+-   Tropical (Tropical wet, Tropical moist, Tropical dry, Tropical montane)
 
-**FAOSTAT Implementation**: - Savanna fire fuel consumption values vary by climate zone (Table 2.4) - Organic soil emission factors stratified by climate (IPCC 2014 Wetlands Supplement) - Links IPCC methodology to geographic reality
+Source:
 
-**Access**: - JRC European Soil Data Centre (ESDAC): https://esdac.jrc.ec.europa.eu/ - Reference: JRC (2010) Climatic Zone layer
+-   Joint Research Centre (JRC) Climate Zones layer
+-   Based on IPCC climatic zone definitions [@ipccChapter3Consistent2006]
+
+FAOSTAT Implementation:
+
+-   Savanna fire fuel consumption values vary by climate zone (Table 2.4)
+-   Organic soil emission factors stratified by climate [@ipcc2013RevisedSupplementary2014]
+-   Links IPCC methodology to geographic reality
+
+Access:
+
+-   JRC European Soil Data Centre (ESDAC): https://esdac.jrc.ec.europa.eu/
+-   Reference: JRC (2010) Climatic Zone layer
 
 ------------------------------------------------------------------------
 
 #### Google Earth Engine Setup
 
-**Platform Overview**:\
-Google Earth Engine is a cloud-based geospatial analysis platform providing: - Petabyte-scale satellite imagery archives - Planetary-scale computational infrastructure - JavaScript and Python APIs - Web-based Code Editor
+Platform Overview:\
+Google Earth Engine is a cloud-based geospatial analysis platform providing:
 
-**FAOSTAT Workflow Architecture**:
+-   Petabyte-scale satellite imagery archives
+-   Planetary-scale computational infrastructure
+-   JavaScript and Python APIs
+-   Web-based Code Editor
 
-1.  **Data Ingestion**: All datasets (MCD64A1, MCD12Q1, GAUL, etc.) available as pre-processed GEE assets
-2.  **Pixel-Level Processing**: Fire algorithm applied to all global pixels
-3.  **Zonal Statistics**: Country-level aggregation via GAUL boundaries
-4.  **Export**: Results exported as CSV tables for FAOSTAT database
+FAOSTAT Workflow Architecture:
 
-**Getting Started**:
+1.  Data Ingestion: All datasets (MCD64A1, MCD12Q1, GAUL, etc.) available as pre-processed GEE assets
+2.  Pixel-Level Processing: Fire algorithm applied to all global pixels
+3.  Zonal Statistics: Country-level aggregation via GAUL boundaries
+4.  Export: Results exported as CSV tables for FAOSTAT database
 
-1.  **Account Registration**:
+Getting Started:
+
+1.  Account Registration:
 
     -   Sign up at https://earthengine.google.com/signup/
     -   Academic/NGO accounts typically approved within 1-2 days
 
-2.  **Code Editor Access**:
+2.  Code Editor Access:
 
     -   Navigate to https://code.earthengine.google.com/
     -   JavaScript environment for interactive analysis
 
-3.  **Python API Setup** (optional):
+3.  Python API Setup (optional):
 
     ``` bash
     pip install earthengine-api
     earthengine authenticate
     ```
 
-4.  **Key GEE Concepts**:
+4.  Key GEE Concepts:
 
     -   `ImageCollection`: Time series of raster images
     -   `Image`: Single raster dataset
     -   `FeatureCollection`: Vector dataset (e.g., country boundaries)
     -   `Reducer`: Aggregation functions (sum, mean, etc.)
 
-**FAOSTAT-Relevant GEE Assets**:
+FAOSTAT-Relevant GEE Assets:
 
 ``` javascript
 // Burned Area
@@ -469,13 +716,22 @@ var landCover = ee.ImageCollection("MODIS/061/MCD12Q1");
 var countries = ee.FeatureCollection("FAO/GAUL/2015/level0");
 ```
 
-**Computational Considerations**: - Global annual processing requires substantial compute resources - Batch processing via Earth Engine Tasks for large exports - Memory and timeout limits apply (user-specific quotas) - Tiling strategies may be needed for very large analyses
+Computational Considerations:
 
-**Resources**: - Documentation: https://developers.google.com/earth-engine/ - Code Archive: https://earthengine.google.com/ - Community Tutorials: https://developers.google.com/earth-engine/tutorials/
+-   Global annual processing requires substantial compute resources
+-   Batch processing via Earth Engine Tasks for large exports
+-   Memory and timeout limits apply (user-specific quotas)
+-   Tiling strategies may be needed for very large analyses
+
+Resources:
+
+-   Documentation: https://developers.google.com/earth-engine/
+-   Code Archive: https://earthengine.google.com/
+-   Community Tutorials: https://developers.google.com/earth-engine/tutorials/
 
 ------------------------------------------------------------------------
 
-## 0.3 Chapter Workflows
+## Chapter Workflows
 
 The following chapters provide detailed, step-by-step guidance for implementing each component of the IPCC Tier 1 burned area and emissions estimation workflow. Each chapter builds upon data and methods from previous sections, creating an integrated analytical framework.
 
@@ -513,7 +769,11 @@ FAOSTAT database structure, CRF table formatting, time series visualization, and
 
 ------------------------------------------------------------------------
 
-**Last Updated**: `r Sys.Date()`\
-**Suggested Citation**: Murphy, S (2025). IPCC Forest Fire Activity Data & Emissions Factors: Methodological Guide for Deriving Burned Area and Emissions Estimates.
+Last Updated: `r Sys.Date()`\
+Suggested Citation: Murphy, S (2025). IPCC Forest Fire Activity Data & Emissions Factors: Methodological Guide for Deriving Burned Area and Emissions Estimates.
 
 ------------------------------------------------------------------------
+
+[^index-1]: Note to self: 2025 wishlist
+
+[^index-2]: Section 2.6: URL to page number here

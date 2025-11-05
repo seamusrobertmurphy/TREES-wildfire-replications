@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seamusrobertmurphy.quarto.pub/TREES-wildfire-replications/index.html</loc>
-    <lastmod>2025-11-04T23:06:57.045Z</lastmod>
+    <lastmod>2025-11-05T05:30:53.186Z</lastmod>
   </url>
   <url>
-    <loc>https://seamusrobertmurphy.quarto.pub/TREES-wildfire-replications/01-burn-areas/index.html</loc>
-    <lastmod>2025-11-04T20:39:55.110Z</lastmod>
+    <loc>https://seamusrobertmurphy.quarto.pub/TREES-wildfire-replications/01-burn-area/index.html</loc>
+    <lastmod>2025-11-05T05:50:02.170Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seamusrobertmurphy.quarto.pub/TREES-wildfire-replications/02-veg-classes/index.html</loc>
+    <lastmod>2025-11-05T06:04:35.981Z</lastmod>
   </url>
   <url>
     <loc>https://seamusrobertmurphy.quarto.pub/TREES-wildfire-replications/references/index.html</loc>

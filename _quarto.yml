@@ -24,7 +24,8 @@ book:
 
   chapters:
     - index.qmd
-    - 01-burn-areas/index.qmd
+    - 01-burn-area/index.qmd
+    - 02-veg-classes/index.qmd    
 
   appendices:
     - references/index.qmd
@@ -47,7 +48,6 @@ format:
     toc: true
     toc-location: right
     toc-depth: 3
-    toc-expand: true
     toc-title: "**On this page**"
     number-sections: true
     embed-resources: false
